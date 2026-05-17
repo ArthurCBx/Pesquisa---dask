@@ -1,0 +1,15 @@
+[project]
+name = "pesquisa-dask"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "ipykernel",
+    "dask",
+    "dask-cuda",
+    "nvidia-ml-py"
+]
