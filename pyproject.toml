@@ -11,5 +11,11 @@ dependencies = [
     "ipykernel",
     "dask",
     "dask-cuda",
-    "nvidia-ml-py"
+    "nvidia-ml-py",
+    "pyarrow>=13.0.0",
+    "requests",
+    "aiohttp",
+    "dask-ml>=2025.1.0",
+    "torch",
+    "skorch"
 ]
