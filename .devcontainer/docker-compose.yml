@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/app.Dockerfile
+    volumes:
+      - ..:/pesquisa-dask:cached
+    working_dir: /pesquisa-dask
+    command: /bin/sh -c "while sleep 1000; do :; done"

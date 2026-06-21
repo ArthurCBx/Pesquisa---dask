@@ -17,5 +17,7 @@ dependencies = [
     "aiohttp",
     "dask-ml>=2025.1.0",
     "torch",
-    "skorch"
+    "skorch",
+    "dask-cudf-cu12",
+    "bokeh"
 ]

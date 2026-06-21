@@ -1,0 +1,41 @@
+{
+  "name": "orbitra-docs",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/pesquisa-dask",
+
+  "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.gitconfig,target=/tmp/host.gitconfig,type=bind,consistency=cached"
+    ],
+
+  "shutdownAction": "stopCompose",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "github.copilot",
+        "jupyter.vscode-jupyter"
+      ]
+    }
+  },
+  "postCreateCommand": "bash ./.devcontainer/post_create.sh",
+  "remoteEnv":{
+    "PYTHONPATH": "/pesquisa-dask",
+    "GIT_USER_NAME": "${localEnv:GIT_USER_NAME}",
+    "GIT_USER_EMAIL": "${localEnv:GIT_USER_EMAIL}",
+    "WORKSPACEFOLDER": "${containerWorkspaceFolder}"
+  },
+  "remoteUser": "root",
+  "containerUser": "root"
+}
